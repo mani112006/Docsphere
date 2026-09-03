@@ -70,7 +70,7 @@ async function handleBiometricAuth() {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/95 px-4">
       <div className="w-full max-w-sm rounded-3xl bg-surface p-6 text-ink shadow-xl">
         <div className="mb-4 flex flex-col items-center text-center">
-          <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+          <div onClick={handleBiometricAuth} className="mb-3 h-12 w-12 items-center justify-center rounded-3xl bg-brand-soft text-brand cursor-pointer">
             <Lock size={22} />
           </div>
           <h1 className="text-xl font-semibold">DocSphere is locked</h1>
