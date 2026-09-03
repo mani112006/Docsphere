@@ -41,7 +41,7 @@ async function handleBiometricAuth() {
       // மொபைலின் சொந்த கைரேகை பாப்-அப்பைத் தூண்டுதல்
       const credential = await navigator.credentials.get({
         publicKey: {
-          challenge: new Uint8Array([/* ரகசிய சாவிகள் / Challenge */]),
+          challenge: window.crypto.getRandomValues(new Uint8Array(32)),
           timeout: 60000,
           userVerification: "required"
         }
