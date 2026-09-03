@@ -31,30 +31,32 @@ export function PinLockScreen() {
       setBusy(false)
     }
   }
-// பயோமெட்ரிக் (கைரேகை) சரிபார்ப்பைச் செயல்படுத்துவதற்கான கோடு
 async function handleBiometricAuth() {
   try {
     const available = window.PublicKeyCredential && 
       await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
     
     if (available) {
-      // மொபைலின் சொந்த கைரேகை பாப்-அப்பைத் தூண்டுதல்
       const credential = await navigator.credentials.get({
         publicKey: {
           challenge: window.crypto.getRandomValues(new Uint8Array(32)),
           timeout: 60000,
-          userVerification: "required"
+          userVerification: "required",
+          rpId: window.location.hostname
         }
       });
+      
       if (credential) {
-        // கைரேகை வெற்றிகரமாக உறுதிப்படுத்தப்பட்டால் ஆப் திறக்கும்
         unlock();
+      } else {
+        alert("கைரேகை சரிபார்ப்பு தோல்வியுற்றது.");
       }
     } else {
       alert("இந்தச் சாதனத்தில் கைரேகை பாதுகாப்பு வசதி கிடைக்கவில்லை.");
     }
   } catch (error) {
     console.error("Biometric authentication failed", error);
+    alert("கைரேகை சரிபார்ப்பில் பிழை ஏற்பட்டுள்ளது. மீண்டும் முயற்சிக்கவும்.");
   }
 }
   function press(digit: string) {
