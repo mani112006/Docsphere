@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@source "./**/*.{ts,tsx,js,jsx}";
+@source "../index.html";
+
+@custom-variant theme-oled (&:where(.theme-oled, .theme-oled *));
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ds-ink);
+  --color-muted: var(--ds-muted);
+  --color-line: var(--ds-line);
+  --color-paper: var(--ds-paper);
+  --color-surface: var(--ds-surface);
+  --color-brand: var(--ds-brand);
+  --color-brand-dark: var(--ds-brand-dark);
+  --color-brand-soft: var(--ds-brand-soft);
+  --color-gold: var(--ds-gold);
+  --color-danger: var(--ds-danger);
+  --color-warn: var(--ds-warn);
+}
+
+:root,
+html.theme-light {
+  --ds-ink: #12202b;
+  --ds-muted: #5b6b75;
+  --ds-line: #d7e0e4;
+  --ds-paper: #f4f7f8;
+  --ds-surface: #ffffff;
+  --ds-brand: #0f4c5c;
+  --ds-brand-dark: #0a3540;
+  --ds-brand-soft: #e6f2f4;
+  --ds-gold: #c9a227;
+  --ds-danger: #b42318;
+  --ds-warn: #b54708;
+}
+
+html.theme-oled {
+  --ds-ink: #f3f5f6;
+  --ds-muted: #8b9aa3;
+  --ds-line: #1a1a1a;
+  --ds-paper: #000000;
+  --ds-surface: #0a0a0a;
+  --ds-brand: #5ec8d4;
+  --ds-brand-dark: #3aa8b4;
+  --ds-brand-soft: #06181c;
+  --ds-gold: #e0c060;
+  --ds-danger: #ff6b5a;
+  --ds-warn: #ffb020;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}

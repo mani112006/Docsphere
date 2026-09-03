@@ -1,0 +1,19 @@
+{
+  "name": "DocSphere",
+  "short_name": "DocSphere",
+  "description": "Private personal document wallet by MANIKANDAN S",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f7f8",
+  "theme_color": "#0f4c5c",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
