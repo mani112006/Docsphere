@@ -1,0 +1,89 @@
+package com.example.docsphere.ui.theme
+
+import android.app.Activity
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
+
+private val LightColorScheme = lightColorScheme(
+    primary = TealPrimary,
+    onPrimary = PureWhite,
+    primaryContainer = TealSoft,
+    onPrimaryContainer = TealPrimaryDark,
+    secondary = TealPrimaryDark,
+    onSecondary = PureWhite,
+    secondaryContainer = TealContainer,
+    onSecondaryContainer = TealPrimaryDark,
+    tertiary = GoldAccent,
+    onTertiary = PureWhite,
+    tertiaryContainer = GoldSoft,
+    onTertiaryContainer = InkDark,
+    background = PaperBackground,
+    onBackground = InkDark,
+    surface = PureWhite,
+    onSurface = InkDark,
+    surfaceVariant = PaperBackground,
+    onSurfaceVariant = TextMuted,
+    outline = BorderLine,
+    error = DangerRed,
+    onError = PureWhite,
+    errorContainer = DangerSoft,
+    onErrorContainer = DangerRed
+)
+
+private val DarkColorScheme = darkColorScheme(
+    primary = DarkTealPrimary,
+    onPrimary = DarkBackground,
+    primaryContainer = DarkTealContainer,
+    onPrimaryContainer = DarkInk,
+    secondary = DarkTealPrimary,
+    onSecondary = DarkBackground,
+    secondaryContainer = DarkSurfaceVariant,
+    onSecondaryContainer = DarkInk,
+    tertiary = GoldAccent,
+    onTertiary = DarkBackground,
+    tertiaryContainer = DarkSurfaceVariant,
+    onTertiaryContainer = DarkInk,
+    background = DarkBackground,
+    onBackground = DarkInk,
+    surface = DarkSurface,
+    onSurface = DarkInk,
+    surfaceVariant = DarkSurfaceVariant,
+    onSurfaceVariant = DarkTextMuted,
+    outline = DarkBorderLine,
+    error = DangerRed,
+    onError = PureWhite,
+    errorContainer = DangerSoft,
+    onErrorContainer = DangerRed
+)
+
+@Composable
+fun DocSphereTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
+
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as? Activity)?.window
+            if (window != null) {
+                window.statusBarColor = colorScheme.primary.toArgb()
+                WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = false
+            }
+        }
+    }
+
+    MaterialTheme(
+        colorScheme = colorScheme,
+        typography = Typography,
+        content = content
+    )
+}

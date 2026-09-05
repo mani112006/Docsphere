@@ -1,0 +1,6 @@
+{
+  "name": "DocSphere",
+  "description": "A private personal document wallet to securely store and organise important documents with PIN protection, OCR scanning, and family management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

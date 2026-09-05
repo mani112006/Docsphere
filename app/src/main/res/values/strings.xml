@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DocSphere</string>
+    <string name="app_tagline">Your Private Personal Document Wallet</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_documents">Documents</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_family">Family</string>
+    <string name="nav_security">Vault</string>
+    <string name="nav_settings">Settings</string>
+    
+    <string name="action_add_document">Add Document</string>
+    <string name="action_scan_document">Scan Document</string>
+    <string name="action_search">Search documents…</string>
+    <string name="action_voice_search">Voice Search</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_save">Save Document</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_share">Share</string>
+    <string name="action_qr_passcard">QR Passcard</string>
+    <string name="action_renewal_portal">Open Official Renewal Portal</string>
+    
+    <string name="status_valid">Valid</string>
+    <string name="status_expiring_soon">Expiring Soon</string>
+    <string name="status_expired">Expired</string>
+    
+    <string name="pin_enter_title">Unlock DocSphere Vault</string>
+    <string name="pin_enter_subtitle">Enter your 4 or 6-digit security PIN</string>
+    <string name="pin_setup_title">Set Up Security PIN</string>
+    <string name="pin_setup_subtitle">Choose a secure 4 or 6-digit PIN to protect your vault</string>
+    <string name="pin_biometric_prompt">Unlock with Biometrics</string>
+</resources>
